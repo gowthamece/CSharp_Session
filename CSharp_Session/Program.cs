@@ -53,18 +53,58 @@ namespace CSharp_Session
             //----------------------------------//
 
             //Polymorphism 
-            Employee[] employees = new Employee[3]; 
-            employees[0] = new Employee();
-            employees[1]=new PartTimeEmployee(); //base class reference vaiable can point to a child class object
-            employees[2] = new FullTimeEmployee();
-            foreach(Employee e in employees)
-            {
-                e.PrintFullName();
-            }
+            //Employee[] employees = new Employee[3]; 
+            //employees[0] = new Employee();
+            //employees[1]=new PartTimeEmployee(); //base class reference vaiable can point to a child class object
+            //employees[2] = new FullTimeEmployee();
+            //foreach(Employee e in employees)
+            //{
+            //    e.PrintFullName();
+            //}
+
+
+            //Interface 
+
+            //RegularCustomer regularCustomer = new RegularCustomer();
+            ////regularCustomer.Print();
+            ////regularCustomer.TemporaryCustomer();
+            ////ICustomerInherit customerInherit = new RegularCustomer();
+
+            //regularCustomer.Print();
+            //regularCustomer.PrintTemp();
+
+
+            // Abstract Classess 
+
+            NousFullTimeEmployee nousFullTimeEmployee = new NousFullTimeEmployee();
+            nousFullTimeEmployee.FirstName = "Arun";
+            nousFullTimeEmployee.LastName = "Raj";
+            nousFullTimeEmployee.AnnualSalary = 100000;
+            string  name= nousFullTimeEmployee.GetFullName();
+             int salary = nousFullTimeEmployee.GetMonthlySalary();
+            Console.WriteLine($"Full Time Employee.....");
+            Console.WriteLine($"Name ={name}");
+            Console.WriteLine( $"Salary={salary}");
+            Console.WriteLine("--------------------------");
+            NousPartTimeEmployee nousPartTime = new NousPartTimeEmployee();
+            nousPartTime.FirstName = "Kapil";
+            nousPartTime.LastName = "Sharma";
+            nousPartTime.HourlyPay = 50;
+            nousPartTime.TotalHourWorked = 40;
+
+            string name1 = nousPartTime.GetFullName();
+            int salary1 = nousPartTime.GetMonthlySalary();
+
+            Console.WriteLine($"Part Time Employee.....");
+            Console.WriteLine($"Name ={name1}");
+            Console.WriteLine($"Salary={salary1}");
+            Console.WriteLine("--------------------------");
 
 
 
-                
+
+
+
             Console.ReadKey();
         }
     }
