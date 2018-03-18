@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+public delegate bool Emp_Delegate(CSharp_Session.Employee employee);
 
 namespace CSharp_Session
 {
@@ -13,7 +14,18 @@ namespace CSharp_Session
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int Expereince { get; set; }
+        public  static void PromoteEmployee(List<Employee> employees, Emp_Delegate isEligible)
+        {
+            foreach(Employee emp in employees)
+            {
+                if(isEligible(emp))
+                {
+                    Console.WriteLine( $"Employee Name: { emp.FirstName}, { emp.LastName}" +" Promoted ");
+                }
+            }
 
+        }
         //public Employee ()
         //{
         //    Console.WriteLine("Base class");

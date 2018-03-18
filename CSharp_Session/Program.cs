@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+public delegate void Hello_function_Deleagte(string Message);
+
+
 
 namespace CSharp_Session
 {
     class Program
     {
+        public static void Hello(string message)
+        {
+            Console.WriteLine(message);
+
+        }
         static void Main(string[] args)
         {
             Customer customer = new Customer("Gowtham","K");
@@ -76,36 +84,68 @@ namespace CSharp_Session
 
             // Abstract Classess 
 
-            NousFullTimeEmployee nousFullTimeEmployee = new NousFullTimeEmployee();
-            nousFullTimeEmployee.FirstName = "Arun";
-            nousFullTimeEmployee.LastName = "Raj";
-            nousFullTimeEmployee.AnnualSalary = 100000;
-            string  name= nousFullTimeEmployee.GetFullName();
-             int salary = nousFullTimeEmployee.GetMonthlySalary();
-            Console.WriteLine($"Full Time Employee.....");
-            Console.WriteLine($"Name ={name}");
-            Console.WriteLine( $"Salary={salary}");
-            Console.WriteLine("--------------------------");
-            NousPartTimeEmployee nousPartTime = new NousPartTimeEmployee();
-            nousPartTime.FirstName = "Kapil";
-            nousPartTime.LastName = "Sharma";
-            nousPartTime.HourlyPay = 50;
-            nousPartTime.TotalHourWorked = 40;
+            //NousFullTimeEmployee nousFullTimeEmployee = new NousFullTimeEmployee();
+            //nousFullTimeEmployee.FirstName = "Arun";
+            //nousFullTimeEmployee.LastName = "Raj";
+            //nousFullTimeEmployee.AnnualSalary = 100000;
+            //string  name= nousFullTimeEmployee.GetFullName();
+            // int salary = nousFullTimeEmployee.GetMonthlySalary();
+            //Console.WriteLine($"Full Time Employee.....");
+            //Console.WriteLine($"Name ={name}");
+            //Console.WriteLine( $"Salary={salary}");
+            //Console.WriteLine("--------------------------");
+            //NousPartTimeEmployee nousPartTime = new NousPartTimeEmployee();
+            //nousPartTime.FirstName = "Kapil";
+            //nousPartTime.LastName = "Sharma";
+            //nousPartTime.HourlyPay = 50;
+            //nousPartTime.TotalHourWorked = 40;
 
-            string name1 = nousPartTime.GetFullName();
-            int salary1 = nousPartTime.GetMonthlySalary();
+            //string name1 = nousPartTime.GetFullName();
+            //int salary1 = nousPartTime.GetMonthlySalary();
 
-            Console.WriteLine($"Part Time Employee.....");
-            Console.WriteLine($"Name ={name1}");
-            Console.WriteLine($"Salary={salary1}");
-            Console.WriteLine("--------------------------");
+            //Console.WriteLine($"Part Time Employee.....");
+            //Console.WriteLine($"Name ={name1}");
+            //Console.WriteLine($"Salary={salary1}");
+            //Console.WriteLine("--------------------------");
 
 
+            //Access Modifiers
+
+          ///  Access_Modifiers modifiers = new Access_Modifiers(); 
+           
+
+            //Deleagte 
+            //Delegate_Demo delegate_Demo = new Delegate_Demo();
+
+            //Hello_function_Deleagte
+            //     hello_Function_Deleagte = new Hello_function_Deleagte(Hello);
+
+            //hello_Function_Deleagte("Hello");
+
+
+            List<Employee> employees = new List<Employee>();
+            employees.Add(new Employee { FirstName = "Arun", LastName = "Kumar", Expereince = 5 });
+            employees.Add(new Employee { FirstName = "Arun", LastName = "Raj", Expereince = 2 });
+
+            Emp_Delegate emp_Delegate = new Emp_Delegate(Emp_Promote);
+                Employee.PromoteEmployee(employees,emp_Delegate);
 
 
 
 
             Console.ReadKey();
+        }
+
+        public static bool Emp_Promote(Employee emp)
+        {
+            if(emp.Expereince>=5)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
     class Customer
