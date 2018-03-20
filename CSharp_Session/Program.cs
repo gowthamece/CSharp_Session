@@ -138,7 +138,6 @@ namespace CSharp_Session
             //bool result = genericDemo.IsEqual(1, "a");
             bool result = genericDemo.IsEqual<string>("b", "a");
             Console.WriteLine($"Result:{result}");
-
             Console.ReadKey();
         }
 
