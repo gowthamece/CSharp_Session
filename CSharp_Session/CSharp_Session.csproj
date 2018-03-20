@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AbstractClass_Demo.cs" />
     <Compile Include="Access_Modifiers.cs" />
+    <Compile Include="GenericDemo.cs" />
     <Compile Include="Inheritance.cs" />
     <Compile Include="Interface_Demo.cs" />
     <Compile Include="Program.cs" />

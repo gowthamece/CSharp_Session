@@ -111,8 +111,8 @@ namespace CSharp_Session
 
             //Access Modifiers
 
-          ///  Access_Modifiers modifiers = new Access_Modifiers(); 
-           
+            ///  Access_Modifiers modifiers = new Access_Modifiers(); 
+
 
             //Deleagte 
             //Delegate_Demo delegate_Demo = new Delegate_Demo();
@@ -123,15 +123,21 @@ namespace CSharp_Session
             //hello_Function_Deleagte("Hello");
 
 
-            List<Employee> employees = new List<Employee>();
-            employees.Add(new Employee { FirstName = "Arun", LastName = "Kumar", Expereince = 5 });
-            employees.Add(new Employee { FirstName = "Arun", LastName = "Raj", Expereince = 2 });
+            //List<Employee> employees = new List<Employee>();
+            //employees.Add(new Employee { FirstName = "Arun", LastName = "Kumar", Expereince = 5 });
+            //employees.Add(new Employee { FirstName = "Arun", LastName = "Raj", Expereince = 2 });
 
-            Emp_Delegate emp_Delegate = new Emp_Delegate(Emp_Promote);
-                Employee.PromoteEmployee(employees,emp_Delegate);
+            //Emp_Delegate emp_Delegate = new Emp_Delegate(Emp_Promote);
+            //    Employee.PromoteEmployee(employees,emp_Delegate);
 
 
+            //Generic 
 
+            GenericDemo genericDemo = new GenericDemo();
+           // bool result = genericDemo.IsEqual(1, 2);
+            //bool result = genericDemo.IsEqual(1, "a");
+            bool result = genericDemo.IsEqual<string>("b", "a");
+            Console.WriteLine($"Result:{result}");
 
             Console.ReadKey();
         }
