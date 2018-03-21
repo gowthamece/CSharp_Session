@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,25 @@ public delegate void Hello_function_Deleagte(string Message);
 
 namespace CSharp_Session
 {
+   
+
     class Program
     {
+        public const Decimal CTM = 10.32M; // Complile time const
+        public  readonly Decimal PI ; // Runt time const
+
+        int? i=null;
+        
+
+        public Program()
+        {
+            PI = 3.14M;
+            int j = i ?? 0;
+        }
         public static void Hello(string message)
         {
+           
+            
             Console.WriteLine(message);
 
         }
@@ -20,7 +36,7 @@ namespace CSharp_Session
         {
             Customer customer = new Customer("Gowtham","K");
             //Customer customer = new Customer();
-            customer.PrintName();
+           // customer.PrintName();
 
             //Arthimetic arthimetic = new Arthimetic(2, 3);
             //Arthimetic arthimetic1 = new Arthimetic(2, 10);
@@ -131,13 +147,127 @@ namespace CSharp_Session
             //    Employee.PromoteEmployee(employees,emp_Delegate);
 
 
-            //Generic 
+            //Generic  - ------------------------------
 
-            GenericDemo genericDemo = new GenericDemo();
-           // bool result = genericDemo.IsEqual(1, 2);
-            //bool result = genericDemo.IsEqual(1, "a");
-            bool result = genericDemo.IsEqual<string>("b", "a");
-            Console.WriteLine($"Result:{result}");
+            //  GenericDemo<string> genericDemo = new GenericDemo<string>();
+            // // bool result = genericDemo.IsEqual(1, 2);
+            ////  bool result = genericDemo.IsEqual(1, "a");
+            //  bool result = genericDemo.IsEqual("a", "a","b");
+            //  Console.WriteLine($"Result:{result}");
+
+            ///--------------------------------------------//// 
+
+            //ArrayList arrayList = new ArrayList();
+            //arrayList.Add("str");
+            //arrayList.Add(1);
+            //foreach (var array in arrayList)
+            //{
+            //    Console.WriteLine($"{array}");
+            //}
+
+            //Hashtable hashtable = new Hashtable();
+            //hashtable.Add(1, 2);
+            //hashtable.Add("str", "Name");
+
+            //foreach (DictionaryEntry hash in hashtable)
+            //{
+            //    Console.WriteLine($"{hash.Key} -  {hash.Value}");
+            //}
+
+            //SortedList sortedList = new SortedList();
+
+            //// sortedList.Add("1", "2");
+            //sortedList.Add("SortedList_Key", "SortedList");
+            //sortedList.Add("A_Key", "A_Value");
+
+            //foreach (DictionaryEntry sort in sortedList)
+            //{
+            //    Console.WriteLine($"{sort.Key} -  {sort.Value}");
+            //}
+            // Console.WriteLine("-----------------------------");
+            // Console.WriteLine("Stack");
+
+            //Stack stack = new Stack();
+            //stack.Push("a");
+            //stack.Push(2);
+            //stack.Push(3);
+            //foreach (var stk in stack)
+            //{
+            //    Console.WriteLine($"{stk}");
+            //}
+
+            // Console.WriteLine("Queue");
+            //Queue queue = new Queue();
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //foreach (var que in queue)
+            //{
+            //    Console.WriteLine($"{que}");
+            //}
+
+            // Console.WriteLine("-----------------------");
+            // Console.WriteLine("Generic Collection");
+            // ///Generic Collection 
+            // ///
+            // Console.WriteLine("---------------List--------------------");
+            //List<int> lst = new List<int>();
+            //lst.Add(100);
+            //lst.Add(200);
+            //lst.Add(300);
+            //lst.Add(400);
+            //foreach (int i in lst)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //Console.WriteLine("---------------Dictonary--------------------");
+            //Dictionary<int, string> dictonary = new Dictionary<int, string>();
+            //dictonary.Add(1, "Arun");
+            //dictonary.Add(2, "Pradeep");
+            //dictonary.Add(3, "JP");
+            //dictonary.Add(4, "Navaneethan");
+            //foreach (KeyValuePair<int, string> kvp in dictonary)
+            //{
+            //    Console.WriteLine(kvp.Key + " " + kvp.Value);
+
+            //}
+
+            //Console.WriteLine("----------------SortedList---------------- ");
+
+            //SortedList<int, string> sortedListGeneric = new SortedList<int, string>();
+
+            //sortedListGeneric.Add(2, "Orange");
+            //sortedListGeneric.Add(1, "Apple");
+            //foreach (KeyValuePair<int, string> kvp in sortedListGeneric)
+            //{
+            //    Console.WriteLine(kvp.Key + " " + kvp.Value);
+
+            //}
+
+            // Console.WriteLine("----------------Stack---------------- ");
+            //Stack<int> stackGeneric = new Stack<int>();
+
+            //stackGeneric.Push(3); stackGeneric.Push(2); stackGeneric.Push(1);
+
+            //foreach (int _stack in stackGeneric)
+            //{
+            //    Console.WriteLine(_stack);
+
+            //}
+
+            // Console.WriteLine("----------------Queue---------------- ");
+
+            Queue<string> queueGeneric = new Queue<string>();
+
+            queueGeneric.Enqueue("Arun");
+            queueGeneric.Enqueue("JP");
+            queueGeneric.Enqueue("Navaneethan");
+
+            foreach (string _queueGeneric in queueGeneric)
+            {
+                Console.WriteLine(_queueGeneric);
+
+            }
             Console.ReadKey();
         }
 

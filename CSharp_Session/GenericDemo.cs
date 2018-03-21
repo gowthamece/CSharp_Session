@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_Session
 {
-   public class GenericDemo
+   public class GenericDemo<T>
     {
         public bool IsEqual(int Value1, int Value2)
         {
@@ -20,7 +20,7 @@ namespace CSharp_Session
             return result;
         }
 
-        public bool IsEqual<T>(T Value1, T Value2)
+        public bool IsEqual(T Value1, T Value2, string value)
         {
             bool result = (Value1.Equals(Value2));
             return result;
