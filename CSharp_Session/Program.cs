@@ -19,7 +19,6 @@ namespace CSharp_Session
 
         int? i=null;
         
-
         public Program()
         {
             PI = 3.14M;
