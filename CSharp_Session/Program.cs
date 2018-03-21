@@ -17,8 +17,7 @@ namespace CSharp_Session
         public const Decimal CTM = 10.32M; // Complile time const
         public  readonly Decimal PI ; // Runt time const
 
-        int? i=null;
-        
+        int? i=null;    
         public Program()
         {
             PI = 3.14M;
